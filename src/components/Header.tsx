@@ -11,7 +11,7 @@ export default async function Header() {
 
     return 
       <header>
-        <Link href="/">{settings.data.site_title}</Link>
+        <Link href="/">{setting.data.site_title}</Link>
     <nav>
         <ul>
             {settings.data.navigation.map(({link, label})=>(
