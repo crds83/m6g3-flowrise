@@ -6,15 +6,15 @@ export default async function Header() {
 
   const client = createClient(); 
 
-  const page = await client.getSingle("settings");
+  const page = await client.getSingle("settings1");
 
 
     return 
       <header>
-        <Link href="/">{settings.data.site_title}</Link>
+        <Link href="/">{settings1.data.site_title}</Link>
     <nav>
         <ul>
-            {settings.data.navigation.map(({link, label})=>(
+            {settings1.data.navigation.map(({link, label})=>(
                 <li key={label}>
                         <PrismicNextLink field={link}>{label}</PrismicNextLink>
                 </li>
