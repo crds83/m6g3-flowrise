@@ -22,7 +22,7 @@ const nunitoSans = Nunito_Sans({
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient(); 
-  const page = await client.getSingle("settings");
+  const page = await client.getSingle("settings1");
  
   return {
     title: settings.data.site_title || "Artsphere",

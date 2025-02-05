@@ -11,10 +11,10 @@ export default async function Header() {
 
     return 
       <header>
-        <Link href="/">{settings1.data.site_title}</Link>
+        <Link href="/">{settings.data.site_title}</Link>
     <nav>
         <ul>
-            {settings1.data.navigation.map(({link, label})=>(
+            {settings.data.navigation.map(({link, label})=>(
                 <li key={label}>
                         <PrismicNextLink field={link}>{label}</PrismicNextLink>
                 </li>
