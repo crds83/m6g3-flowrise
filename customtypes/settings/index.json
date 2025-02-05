@@ -1,0 +1,20 @@
+{
+  "id": "settings",
+  "json": {
+    "Main": {
+      "siteTitle": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Site Title",
+          "placeholder": "Title of the site",
+          "allowTargetBlank": false,
+          "single": "heading1"
+        }
+      }
+    }
+  },
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}
