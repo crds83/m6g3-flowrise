@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ["var(--font-nunito-sans"],
+        body: ["var(--font-nunitosans"],
         display: ["var(--font-nunito"],
       }
     },
