@@ -4,63 +4,6 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-/**
- * Item in *Navigation → Links*
- */
-export interface NavigationDocumentDataLinksItem {
-  /**
-   * Label field in *Navigation → Links*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Optional - Label for the link
-   * - **API ID Path**: navigation.links[].label
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  label: prismic.TitleField;
-
-  /**
-   * Link field in *Navigation → Links*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link for navigation item
-   * - **API ID Path**: navigation.links[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-}
-
-/**
- * Content for Navigation documents
- */
-interface NavigationDocumentData {
-  /**
-   * Links field in *Navigation*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.links[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  links: prismic.GroupField<Simplify<NavigationDocumentDataLinksItem>>;
-}
-
-/**
- * Navigation document from Prismic
- *
- * - **API ID**: `navigation`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type NavigationDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<NavigationDocumentData>,
-    "navigation",
-    Lang
-  >;
-
 type PageDocumentDataSlicesSlice =
   | HeroSlice
   | QuoteSlice
@@ -150,42 +93,25 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-/**
- * Content for Settings documents
- */
-interface SettingsDocumentData {
-  /**
-   * Site Title field in *Settings*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Title of the site
-   * - **API ID Path**: settings.siteTitle
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  siteTitle: prismic.TitleField;
-}
+interface Settings1DocumentData {}
 
 /**
  * Settings document from Prismic
  *
- * - **API ID**: `settings`
+ * - **API ID**: `settings1`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SettingsDocument<Lang extends string = string> =
+export type Settings1Document<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
-    Simplify<SettingsDocumentData>,
-    "settings",
+    Simplify<Settings1DocumentData>,
+    "settings1",
     Lang
   >;
 
-export type AllDocumentTypes =
-  | NavigationDocument
-  | PageDocument
-  | SettingsDocument;
+export type AllDocumentTypes = PageDocument | Settings1Document;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -208,14 +134,11 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      NavigationDocument,
-      NavigationDocumentData,
-      NavigationDocumentDataLinksItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
-      SettingsDocument,
-      SettingsDocumentData,
+      Settings1Document,
+      Settings1DocumentData,
       AllDocumentTypes,
     };
   }
