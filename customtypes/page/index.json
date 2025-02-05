@@ -1,5 +1,9 @@
 {
   "id": "page",
+  "label": "Page",
+  "repeatable": true,
+  "status": true,
+  "format": "page",
   "json": {
     "Main": {
       "uid": {
@@ -30,26 +34,7 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "hero": {
-              "type": "SharedSlice"
-            },
-            "quote": {
-              "type": "SharedSlice"
-            },
-            "text": {
-              "type": "SharedSlice"
-            },
-            "image": {
-              "type": "SharedSlice"
-            },
-            "image_cards": {
-              "type": "SharedSlice"
-            },
-            "text_with_image": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },
@@ -80,9 +65,5 @@
         }
       }
     }
-  },
-  "label": "Page",
-  "repeatable": true,
-  "status": true,
-  "format": "page"
+  }
 }
