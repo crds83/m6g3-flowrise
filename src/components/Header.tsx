@@ -6,12 +6,12 @@ export default async function Header() {
 
   const client = createClient(); 
 
-  const page = await client.getSingle("settings1");
+  const page = await client.getSingle("settings");
 
 
     return 
       <header>
-        <Link href="/">{setting.data.site_title}</Link>
+        <Link href="/">{settings.data.site_title}</Link>
     <nav>
         <ul>
             {settings.data.navigation.map(({link, label})=>(
