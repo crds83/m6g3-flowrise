@@ -8,6 +8,7 @@ import {
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
+import { ReactNode } from "react";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -34,7 +35,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 /**
  * Component for "Hero" Slices.
  */
-const Hero = ({ slice }: HeroProps): JSX.Element => {
+const Hero = ({ slice }: HeroProps): ReactNode => {
   return (
     <>
       {slice.variation === "default" && (
@@ -51,7 +52,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               field={slice.primary.body}
               components={components}
             />
-            <Button field={slice.primary.button_link} className="mb-8 md:mb-10">
+            <Button  className="mb-8 md:mb-10">
               {slice.primary.button_text}
             </Button>
             <PrismicNextImage
@@ -78,7 +79,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 components={components}
               />
               <Button
-                field={slice.primary.button_link}
+                
                 className="mb-8 md:mb-10"
               >
                 {slice.primary.button_text}

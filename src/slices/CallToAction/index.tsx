@@ -1,4 +1,4 @@
-import { Content } from "@prismicio/client";
+import { Content, RichTextField } from "@prismicio/client";
 import {
   SliceComponentProps,
   JSXMapSerializer,
@@ -8,6 +8,7 @@ import {
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
+import { ReactNode } from "react";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -23,12 +24,24 @@ const components: JSXMapSerializer = {
 /**
  * Props for `CallToAction`.
  */
-export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>;
+export type CallToActionProps = {
+  slice : {
+    slice_type : string,
+    variation : string,
+    primary : {
+      heading : RichTextField,
+      body : RichTextField,
+      button_link : string,
+      button_text : ReactNode,
+    } 
+
+  }
+}
 
 /**
  * Component for "CallToAction" Slices.
  */
-const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
+const CallToAction = ({ slice }: CallToActionProps): ReactNode => {
   return (
     <Bounded
       data-slice-type={slice.slice_type}
@@ -40,7 +53,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
           components={components}
         />
         <PrismicRichText field={slice.primary.body} components={components} />
-        <Button field={slice.primary.button_link}>
+        <Button >
           {slice.primary.button_text}
         </Button>
       </div>

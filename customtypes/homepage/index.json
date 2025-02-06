@@ -1,6 +1,6 @@
 {
-    "id": "homepage",
-    "label": "Homepage",
+    "id": "page",
+    "label": "Page",
     "format": "page",
     "repeatable": false,
     "status": true,

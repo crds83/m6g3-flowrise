@@ -18,7 +18,7 @@ export default async function Header() {
 
         <nav>
           <ul className="flex">
-            {settings.data.navigation.map(({ link, label }) => (
+            {settings.data.navigation.map(({ link, label }) => ( 
               <li key={label}>
                 <PrismicNextLink field={link} className="p-3">
                   {label}

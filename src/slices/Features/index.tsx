@@ -1,4 +1,4 @@
-import { Content } from "@prismicio/client";
+import { type Content } from "@prismicio/client";
 import {
   SliceComponentProps,
   PrismicRichText,
@@ -6,6 +6,7 @@ import {
 } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
+import { ReactNode } from "react";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -44,7 +45,7 @@ export type FeaturesProps = SliceComponentProps<Content.FeaturesSlice>;
 /**
  * Component for "Features" Slices.
  */
-const Features = ({ slice }: FeaturesProps): JSX.Element => {
+const Features = ({ slice }: FeaturesProps): ReactNode => {
   return (
     <Bounded
       data-slice-type={slice.slice_type}

@@ -9,6 +9,7 @@ import clsx from "clsx";
 
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
+import { ReactNode } from "react";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -30,7 +31,7 @@ export type TextWithImageProps =
 /**
  * Component for "TextWithImage" Slices.
  */
-const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
+const TextWithImage = ({ slice }: TextWithImageProps): ReactNode => {
   return (
     <Bounded
       data-slice-type={slice.slice_type}

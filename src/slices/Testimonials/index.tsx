@@ -9,6 +9,7 @@ import Heading from "@/components/Heading";
 
 import { createClient } from "@/prismicio";
 import { PrismicNextImage } from "@prismicio/next";
+import { ReactNode } from "react";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -33,7 +34,7 @@ export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>;
  */
 const Testimonials = async ({
   slice,
-}: TestimonialsProps): Promise<JSX.Element> => {
+}: TestimonialsProps): Promise<ReactNode> => {
   const client = createClient();
 
   const testimonials = await Promise.all(

@@ -1,7 +1,7 @@
 {
-  "format": "custom",
-  "id": "settings1",
+  "id": "settings",
   "label": "Settings",
+  "format": "custom",
   "repeatable": false,
   "status": true,
   "json": {
@@ -32,17 +32,13 @@
         "type": "Group",
         "config": {
           "label": "Navigation",
-          "repeat": true,
           "fields": {
             "link": {
               "type": "Link",
               "config": {
                 "label": "Link",
                 "placeholder": "",
-                "select": null,
-                "allowTargetBlank": true,
-                "allowText": true,
-                "repeat": false
+                "select": null
               }
             },
             "label": {
