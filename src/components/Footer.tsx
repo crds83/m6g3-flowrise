@@ -6,7 +6,7 @@ import Link from "next/link";
 export default async Function() {
     const client = createClient(); 
 
-    const page = await client.getSingle("settings");
+    const settings = await client.getSingle("settings");
 
     return (
         <footer>

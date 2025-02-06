@@ -6,7 +6,7 @@ export default async function Header() {
 
   const client = createClient(); 
 
-  const page = await client.getSingle("settings");
+  const settings = await client.getSingle("settings");
 
 
     return 

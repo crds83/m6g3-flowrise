@@ -22,7 +22,7 @@ const nunitoSans = Nunito_Sans({
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient(); 
-  const page = await client.getSingle("settings");
+  const settings = await client.getSingle("settings");
  
   return {
     title: settings.data.site_title || "Artsphere",
@@ -42,7 +42,7 @@ export default function RootLayout({
     <html lang="en" className={clsx(nunito.variable, nunitoSans.variable)}>
       <body>
 
-        <Header />
+        
         {children}
         <PrismicPreview repositoryName={repositoryName} />
         
