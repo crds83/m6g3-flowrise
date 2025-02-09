@@ -50,6 +50,17 @@
             }
           }
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "hero_2": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }
